@@ -29,10 +29,11 @@ h2.date-time {
   background: #fff;
   font-family: "Inter", sans-serif;
 }
+
 #search-text-input {
-  border-radius: 30px;
-  border: 2px solid #8f8f8f;
+  border: none;
   padding: 6px 10px;
+  margin: 0;
 }
 #searchButton {
   margin-left: 0px;
