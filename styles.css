@@ -1,0 +1,115 @@
+body {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(239, 246, 249) 0%,
+    rgb(206, 239, 253) 90%
+  );
+}
+h1,
+h2 {
+  text-align: center;
+  font-family: "Arima Madurai", cursive;
+}
+h1.current-city {
+  font-weight: 900;
+  font-size: 48px;
+  margin-top: 20px;
+}
+h2.date-time {
+  font-weight: 100;
+  font-size: 24px;
+}
+#app {
+  max-width: 75%;
+  min-width: 65%;
+  margin: 0 auto;
+  padding: 20px 20px 100px 20px;
+  border-radius: 30px;
+  box-shadow: rgba(49, 57, 59, 0.1) 5px 10px 10px;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+}
+#search-text-input {
+  border-radius: 30px;
+  border: 2px solid #8f8f8f;
+  padding: 6px 10px;
+}
+#searchButton {
+  margin-left: 0px;
+  width: 40px;
+  padding: 6px 10px;
+  background: #d9d9d9;
+  border-radius: 0px 30px 30px 0px;
+  border: 2px solid #8f8f8f;
+  cursor: pointer;
+}
+#currentLocationButton {
+  margin-right: 0px;
+  width: 40px;
+  float: inline-start;
+  padding: 6px 10px;
+  background: #d9d9d9;
+  border-radius: 30px 0px 0px 30px;
+  border: 2px solid #8f8f8f;
+  cursor: pointer;
+}
+a:hover {
+  cursor: pointer;
+}
+#fahrenheit,
+#celsius {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+}
+#fahrenheit:hover,
+#celsius:hover {
+  color: #5d5d5d;
+}
+.active {
+  font-weight: bold;
+}
+.temp-unit {
+  min-width: 70px;
+}
+#current-temp {
+  text-align: right;
+  margin: 0;
+  font-size: 110px;
+}
+.current-conditions {
+  margin-left: 15px;
+}
+.day h4 {
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+}
+.small-icon {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+img.large-icon {
+  max-width: 250px;
+  margin: auto;
+}
+.weather-5-day {
+  margin: 150px auto;
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+.day {
+  padding: 10px;
+}
+.high-low {
+  text-align: center;
+  font-size: 16px;
+  width: 75px;
+  margin: 0 auto;
+}
+.current-day {
+  background: #d9d9d9;
+  border-radius: 25px;
+}
