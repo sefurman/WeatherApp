@@ -22,7 +22,7 @@ h2.date-time {
 #app {
   max-width: 80%;
   min-width: 65%;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 20px 20px 100px 20px;
   border-radius: 30px;
   box-shadow: rgba(49, 57, 59, 0.1) 5px 10px 10px;
@@ -114,4 +114,7 @@ img.large-icon {
 .current-day {
   background: #d9d9d9;
   border-radius: 25px;
+}
+footer {
+  text-align: center;
 }
