@@ -20,7 +20,7 @@ h2.date-time {
   font-size: 24px;
 }
 #app {
-  max-width: 75%;
+  max-width: 80%;
   min-width: 65%;
   margin: 0 auto;
   padding: 20px 20px 100px 20px;
@@ -97,6 +97,8 @@ img.large-icon {
 }
 .weather-5-day {
   margin: 150px auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 2px solid #000;
   border-radius: 25px;
 }
