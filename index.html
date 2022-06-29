@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;300;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/80fadd8963.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="app">
+        <form id="search-form">
+          <input
+            type="text"
+            placeholder="Search City"
+            autocomplete="off"
+            autofocus="on"
+            id="search-text-input"
+          />
+          <button id="currentLocationButton">
+            <i class="fa-solid fa-location-arrow"></i>
+          </button>
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="row">
+          <h1 class="current-city col-12" id="current-city">Lansing</h1>
+          <h2 class="date-time col-12"></h2>
+        </div>
+        <div class="row">
+          <div class="temp col-md-6 row justify-content-end">
+            <div class="col-5">
+              <h3 id="current-temp">19</h3>
+            </div>
+            <div class="col-5 row justify-content-end" id="temp-unit">
+              <small>
+                <a class="unit" id="fahrenheit">°F</a> |
+                <a class="unit active" id="celsius">°C</a>
+              </small>
+            </div>
+          </div>
+          <div
+            class="current-conditions justify-content-center col-xs-4 col-md-6"
+          >
+            <p>
+              Precipitation: 0%
+              <br />
+              Humidity: 47%
+              <br />
+              Wind: 6mph
+            </p>
+            <strong>Mostly cloudy</strong>
+          </div>
+          <img class="col-6 large-icon" src="images/cloudy.png" alt="cloud" />
+        </div>
+        <div class="weather-5-day row">
+          <div class="day current-day col">
+            <h4>Mon</h4>
+            <p class="high-low"><strong>75° /</strong> 60°</p>
+            <img
+              class="small-icon"
+              src="images/partly-cloudy.png"
+              alt="partly cloudy"
+            />
+          </div>
+          <div class="day col">
+            <h4>Tue</h4>
+            <p class="high-low"><strong>75° /</strong> 60°</p>
+            <img
+              class="small-icon"
+              src="images/partly-cloudy.png"
+              alt="partly cloudy"
+            />
+          </div>
+          <div class="day col">
+            <h4>Wed</h4>
+            <p class="high-low"><strong>75° /</strong> 60°</p>
+            <img
+              class="small-icon"
+              src="images/partly-cloudy.png"
+              alt="partly cloudy"
+            />
+          </div>
+          <div class="day col">
+            <h4>Thu</h4>
+            <p class="high-low"><strong>75° /</strong> 60°</p>
+            <img
+              class="small-icon"
+              src="images/partly-cloudy.png"
+              alt="partly cloudy"
+            />
+          </div>
+          <div class="day col">
+            <h4>Fri</h4>
+            <p class="high-low"><strong>75° /</strong> 60°</p>
+            <img
+              class="small-icon"
+              src="images/partly-cloudy.png"
+              alt="partly cloudy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
