@@ -96,9 +96,7 @@ img.large-icon {
   margin: auto;
 }
 .weather-5-day {
-  margin: 150px auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 100px 10px 100px;
   border: 2px solid #000;
   border-radius: 25px;
 }
