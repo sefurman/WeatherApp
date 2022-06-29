@@ -26,7 +26,6 @@ function formatDate(date) {
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
-    return minutes;
   }
   let formattedDate = `${day} ${hour}:${minutes} ${ampm}`;
   return formattedDate;
@@ -73,20 +72,20 @@ function searchInput(event) {
 function searchCurrentLocation(position) {
   let apiKey = "671866f89a984fb3a5b9a8d9a03a8914";
   let units = "metric";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-  axios.get(url).then(showWeather);
-}
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showWeather);
 }
 
 let searchForm = document.querySelector("#searchButton");
 searchForm.addEventListener("click", searchInput);
 
+function getCurrent(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
 let currentLocButton = document.querySelector("#currentLocationButton");
-currentLocButton.addEventListener("click", getCurrentPosition);
+currentLocButton.addEventListener("click", getCurrent);
 
 //Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius
 
