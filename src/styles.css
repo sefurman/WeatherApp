@@ -57,11 +57,14 @@ h2.date-time {
 a:hover {
   cursor: pointer;
 }
+small.row {
+  padding: none;
+}
 #fahrenheit,
 #celsius {
   text-decoration: none;
   color: #000;
-  font-size: 16px;
+  font-size: 2.5vw;
 }
 #fahrenheit:hover,
 #celsius:hover {
@@ -70,8 +73,9 @@ a:hover {
 .active {
   font-weight: bold;
 }
-.temp-unit {
+#temp-unit {
   min-width: 70px;
+  padding: 5px;
 }
 #current-temp {
   text-align: right;
