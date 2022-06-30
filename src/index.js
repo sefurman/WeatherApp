@@ -49,10 +49,17 @@ dateElement.innerHTML = formatDate(now);
 
 function showWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
-  let temperature = Math.round(response.data.main.temp);
-  temperatureElement.innerHTML = `${temperature}`;
+  let celciusTemperature = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = `${celciusTemperature}`;
   let curCity = document.querySelector("#current-city");
   curCity.innerHTML = response.data.name;
+  console.log(response.data);
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].main;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 //search
 function searchCity(city) {
