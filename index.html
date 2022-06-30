@@ -44,13 +44,13 @@
           </button>
         </form>
         <div class="row">
-          <h1 class="current-city col-12" id="current-city">Lansing</h1>
+          <h1 class="current-city col-12" id="current-city"></h1>
           <h2 class="date-time col-12"></h2>
         </div>
         <div class="row">
           <div class="temp col-md-6 row justify-content-end">
             <div class="col-5 float-right">
-              <h3 id="current-temp">19</h3>
+              <h3 id="current-temp"></h3>
             </div>
             <div class="col-5 row float-right" id="temp-unit">
               <small>
@@ -61,13 +61,13 @@
           </div>
           <div class="current-conditions float-left col-6">
             <p>
-              Precipitation: 0%
+              Precipitation: <span id="precipitation"></span>%
               <br />
-              Humidity: 47%
+              Humidity: <span id="humidity"></span>%
               <br />
-              Wind: 6mph
+              Wind: <span id="wind"></span>mph
               <br />
-              <strong>Mostly cloudy</strong>
+              <strong id="description">Mostly cloudy</strong>
             </p>
           </div>
           <img class="col-6 large-icon" src="images/cloudy.png" alt="cloud" />
