@@ -53,7 +53,6 @@ function showWeather(response) {
   temperatureElement.innerHTML = `${celciusTemperature}`;
   let curCity = document.querySelector("#current-city");
   curCity.innerHTML = response.data.name;
-  console.log(response.data);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].main;
   let humidityElement = document.querySelector("#humidity");
