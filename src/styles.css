@@ -17,7 +17,7 @@ h1.current-city {
 }
 h2.date-time {
   font-weight: 100;
-  font-size: 24px;
+  font-size: 2.25vw;
 }
 #app {
   max-width: 80%;
@@ -64,7 +64,7 @@ small.row {
 #celsius {
   text-decoration: none;
   color: #000;
-  font-size: 2.5vw;
+  font-size: 2.15vw;
 }
 #fahrenheit:hover,
 #celsius:hover {
