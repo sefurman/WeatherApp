@@ -96,7 +96,7 @@ small.row {
   margin: 0 auto;
   text-align: center;
 }
-img.large-icon {
+#large-icon {
   max-width: 250px;
   margin: auto;
 }
