@@ -51,8 +51,8 @@ function showWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let celciusTemperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = `${celciusTemperature}`;
-  let curCity = document.querySelector("#current-city");
-  curCity.innerHTML = response.data.name;
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].main;
   let humidityElement = document.querySelector("#humidity");
@@ -76,10 +76,10 @@ function searchCity(city) {
 
 function searchInput(event) {
   event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
-  searchCity(city);
+  let cityInputElement = document.querySelector("#search-text-input").value;
+  searchCity(cityInputElement);
 }
-
+searchCity("Baltimore");
 //Current Location
 function searchCurrentLocation(position) {
   let apiKey = "671866f89a984fb3a5b9a8d9a03a8914";
