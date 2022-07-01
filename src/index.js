@@ -34,23 +34,12 @@ let dateElement = document.querySelector("h2.date-time");
 let now = new Date();
 dateElement.innerHTML = formatDate(now);
 
-//let btnContainer = document.getElementsById("temp-unit");
-//let btns = btnContainer.getElementsByClassName("unit");
-
-//for (var i = 0; i < btns.length; i++) {
-//  btns[i].addEventListener("click", function () {
-//    let current = document.getElementsByClassName("active");
-//    current[0].className = current[0].className.replace("active", "");
-//    this.className += "active";
-//  });
-//}
-
 //weather API
 
 function showWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
-  let celciusTemperature = Math.round(response.data.main.temp);
-  temperatureElement.innerHTML = `${celciusTemperature}`;
+  celsiusTemperature = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#description");
@@ -79,7 +68,7 @@ function searchInput(event) {
   let cityInputElement = document.querySelector("#search-text-input").value;
   searchCity(cityInputElement);
 }
-searchCity("Baltimore");
+
 //Current Location
 function searchCurrentLocation(position) {
   let apiKey = "671866f89a984fb3a5b9a8d9a03a8914";
@@ -99,21 +88,30 @@ function getCurrent(event) {
 let currentLocButton = document.querySelector("#currentLocationButton");
 currentLocButton.addEventListener("click", getCurrent);
 
-//Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius
+//Unit conversion
 
-//function convertToFahrenheit(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#current-temp");
-//  temperatureElement.innerHTML = 66;
-//}
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-//function convertToCelsius(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#current-temp");
-//  temperatureElement.innerHTML = 19;
-//}
-//let fahrenheitLink = document.querySelector("#fahrenheit");
-//fahrenheitLink.addEventListener("click", convertToFahrenheit);
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = "null";
 
-//let celsiusLink = document.querySelector("#celsius");
-//celsiusLink.addEventListener("click", convertToCelsius);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+searchCity("Baltimore");

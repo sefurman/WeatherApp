@@ -70,8 +70,15 @@ small {
 #celsius:hover {
   color: #5d5d5d;
 }
+#fahrenheit.active:hover,
+#celsius.active:hover {
+  color: #000;
+}
 .active {
   font-weight: bold;
+}
+a.active:hover {
+  cursor: default;
 }
 #temp-unit {
   min-width: 70px;
