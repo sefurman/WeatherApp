@@ -57,8 +57,8 @@ h2.date-time {
 a:hover {
   cursor: pointer;
 }
-small.row {
-  padding: none;
+small {
+  margin-left: 25px;
 }
 #fahrenheit,
 #celsius {
