@@ -78,8 +78,11 @@ function searchCurrentLocation(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
-let searchForm = document.querySelector("#searchButton");
-searchForm.addEventListener("click", searchInput);
+let searchButton = document.querySelector("#searchButton");
+searchButton.addEventListener("click", searchInput);
+
+let searchEnter = document.querySelector("#search-text-input");
+searchEnter.addEventListener("submit", searchInput);
 
 function getCurrent(event) {
   event.preventDefault();
