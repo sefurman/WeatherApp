@@ -1,8 +1,15 @@
-body {
+body.day {
   background: radial-gradient(
     circle at 10% 20%,
     rgb(239, 246, 249) 0%,
     rgb(206, 239, 253) 90%
+  );
+}
+body.night {
+  background: linear-gradient(
+    112.1deg,
+    rgb(63, 76, 119) 21.4%,
+    rgb(32, 38, 57) 70.2%
   );
 }
 h1,

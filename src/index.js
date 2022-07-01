@@ -34,6 +34,17 @@ let dateElement = document.querySelector("h2.date-time");
 let now = new Date();
 dateElement.innerHTML = formatDate(now);
 
+//background change
+var currentHour = now.getHours();
+let background = document.querySelector("#background");
+if (7 <= currentHour && currentHour < 20) {
+  background.classList.add("day");
+  background.classList.remove("night");
+} else {
+  background.classList.add("night");
+  background.classList.remove("day");
+}
+
 //weather API
 
 function showWeather(response) {
