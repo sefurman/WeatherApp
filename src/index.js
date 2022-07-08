@@ -1,4 +1,4 @@
-//  display the current date and time using JavaScript:
+//  display the current date and time
 function formatDate(date) {
   let hour = date.getHours();
   let days = [
@@ -44,8 +44,29 @@ if (7 <= currentHour && currentHour < 20) {
   background.classList.add("night");
   background.classList.remove("day");
 }
+//Forecast
+const myNodelist = document.querySelectorAll(".weather-forecast");
 
-//weather API
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+}
+function getForecast(coordinates) {
+  let apiKey = "671866f89a984fb3a5b9a8d9a03a8914";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+//Current Weather
 
 function showWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
@@ -65,6 +86,7 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 //search
 function searchCity(city) {
