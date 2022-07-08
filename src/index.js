@@ -45,7 +45,7 @@ if (7 <= currentHour && currentHour < 20) {
   background.classList.remove("day");
 }
 //Forecast
-const myNodelist = document.querySelectorAll(".weather-forecast");
+const weatherForecast = document.querySelectorAll(".weather-forecast");
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -59,7 +59,7 @@ function displayForecast(response) {
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
-      myNodelist[
+      weatherForecast[
         index
       ].innerHTML = `<div class="weather-forecast-date"><h4>${formatDay(
         forecastDay.dt
