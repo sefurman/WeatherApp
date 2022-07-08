@@ -57,7 +57,23 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
 
-  let forecastElement = document.querySelector("#forecast");
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      myNodelist[
+        index
+      ].innerHTML = `<div class="weather-forecast-date"><h4>${formatDay(
+        forecastDay.dt
+      )}</h4></div><img src="https://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" class="small-icon" alt="${
+        forecastDay.weather[0].description
+      }"><div class="weather-forecast-temps"><span class="weather-forecast-max">${Math.round(
+        forecastDay.temp.max
+      )}° /</span><span class="weather-forecast-min"> ${Math.round(
+        forecastDay.temp.min
+      )}°</span></div>`;
+    }
+  });
 }
 function getForecast(coordinates) {
   let apiKey = "671866f89a984fb3a5b9a8d9a03a8914";
