@@ -82,7 +82,7 @@ small {
   color: #000;
 }
 .active {
-  font-weight: bold;
+  font-weight: 800;
 }
 a.active:hover {
   cursor: default;
