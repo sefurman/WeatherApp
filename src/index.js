@@ -95,6 +95,14 @@ function showWeather(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  let windUnitElement = document.querySelector("#windUnit");
+  if (units == "metric") {
+    windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+    windUnitElement.innerHTML = "km/h";
+  } else if (units == "imperial") {
+    windElement.innerHTML = Math.round(response.data.wind.speed);
+    windUnitElement.innerHTML = "mph";
+  }
   let iconElement = document.querySelector("#large-icon");
   iconElement.setAttribute(
     "src",
