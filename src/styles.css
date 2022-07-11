@@ -64,8 +64,18 @@ h2.date-time {
 a:hover {
   cursor: pointer;
 }
-small {
+.temp {
+  display: flex;
+  justify-content: end;
+}
+.current-conditions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.row small {
   margin-left: 25px;
+  padding-left: 0px;
 }
 #fahrenheit,
 #celsius {
@@ -98,6 +108,7 @@ a.active:hover {
 }
 .current-conditions {
   margin-left: 15px;
+  font-size: 2vw;
 }
 .weather-forecast-date h4 {
   font-family: "Arima Madurai";
@@ -114,6 +125,8 @@ a.active:hover {
 #large-icon {
   max-width: 250px;
   margin: auto;
+  margin-top: -50px;
+  margin-bottom: -20px;
 }
 .weather-5-day.row {
   margin: 10px 50px 10px 50px;
